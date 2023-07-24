@@ -23,6 +23,22 @@ experiments = [
         'triple_end_tag': '',
         'triple_join_tag': '\n',
         'testset_filename': os.path.join('.', 'data', 'test', 'ga_test.xml')
+    },
+    {
+        'name': 'en_prompt_few_shot',
+        'lang': 'en',
+        'prompt': "Write the following triples as fluent {lang} text.\n\nTriple 1: \"\"\"\nAdolfo_Suárez_Madrid–Barajas_Airport runwayName \"14R/32L\"\n\"\"\"\n\nText 1: 14R/32L is the runway name of Adolfo Suárez Madrid-Barajas Airport.\n##\nTriple 2: \"\"\"\nAmerican_Journal_of_Mathematics abbreviation \"Am. J. Math.\"\nAmerican_Journal_of_Mathematics firstPublicationYear 1878\nAmerican_Journal_of_Mathematics issnNumber \"1080-6377\"\n\"\"\"\nText 2: The American Journal of Mathematics was first published in 1878 and is also known by the abbreviated title of Am. J. Math. It has an ISSN number of 1080-6377.\n##\nTriples 3:{triples_set}\nText 3:",
+        'model': 'text-davinci-003',
+        'temperature': 0,
+        'maximum_length': 500,
+        'top_p': 1,
+        'frequency_penalty': 0,
+        'presence_penalty': 0,
+        'triple_template': '{subject} {predicate} {object}',
+        'triple_start_tag': '',
+        'triple_end_tag': '',
+        'triple_join_tag': '\n',
+        'testset_filename': os.path.join('.', 'data', 'test', 'ga_test.xml')
     }
 ]
 
